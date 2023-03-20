@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace AddressBook3
 {
@@ -143,6 +144,37 @@ namespace AddressBook3
             catch (Exception ex)
             {
                 Console.WriteLine("Error exporting to CSV file: {0}", ex.Message);
+            }
+        }
+
+
+        public void WriteToJsonFile(string filePath)
+        {
+            try
+            {
+                string json = JsonConvert.SerializeObject(ContactInfo, Newtonsoft.Json.Formatting.Indented);
+                File.WriteAllText(filePath, json);
+
+                Console.WriteLine("Address book written to file successfully!");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error writing to file: {0}", ex.Message);
+            }
+        }
+
+        public void ReadFromJsonFile(string filePath)
+        {
+            try
+            {
+                string json = File.ReadAllText(filePath);
+                ContactInfo = JsonConvert.DeserializeObject<List<Contacts>>(json);
+
+                Console.WriteLine("Address book read from file successfully!");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error reading from file: {0}", ex.Message);
             }
         }
 

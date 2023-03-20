@@ -21,8 +21,11 @@
             //myAddressBook.WriteToFile(path);
             //myAddressBook.ReadFromFile(path);
 
-            string path = "C:\\Users\\kundan\\Desktop\\Bridgelab\\rfp257\\AddressBook3\\AddressBook3\\Contact.csv";
-            myAddressBook.ExportToCsv(path);
+            //string path = "C:\\Users\\kundan\\Desktop\\Bridgelab\\rfp257\\AddressBook3\\AddressBook3\\Contact.csv";
+            //myAddressBook.ExportToCsv(path);
+
+            string path = "C:\\Users\\kundan\\Desktop\\Bridgelab\\rfp257\\AddressBook3\\AddressBook3\\Contact.json";
+            myAddressBook.WriteToJsonFile(path);
         }
     }
 }
