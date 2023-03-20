@@ -14,14 +14,15 @@
             myAddressBook.AddContact(newContact1);
             myAddressBook.AddContact(newContact2);
 
-            myAddressBook.PrintContacts();
+            //myAddressBook.PrintContacts();
 
 
-            string path = "C:\\Users\\kundan\\Desktop\\Bridgelab\\rfp257\\AddressBook3\\AddressBook3\\Newfile.txt";
+            //string path = "C:\\Users\\kundan\\Desktop\\Bridgelab\\rfp257\\AddressBook3\\AddressBook3\\Newfile.txt";
+            //myAddressBook.WriteToFile(path);
+            //myAddressBook.ReadFromFile(path);
 
-
-            myAddressBook.WriteToFile(path);
-            myAddressBook.ReadFromFile(path);
+            string path = "C:\\Users\\kundan\\Desktop\\Bridgelab\\rfp257\\AddressBook3\\AddressBook3\\Contact.csv";
+            myAddressBook.ExportToCsv(path);
         }
     }
 }
